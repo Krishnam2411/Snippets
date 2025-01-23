@@ -1,0 +1,18 @@
+# macOS-specific files and folders
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+.vscode
+.cph
+
+# Executable files
+*.bin
+*.exe
+*.out
