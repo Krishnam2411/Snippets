@@ -2,8 +2,11 @@
 // 2212147
 
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 
 using namespace std;
+using namespace __gnu_pbds;
 
 #ifndef ONLINE_JUDGE
 #include "debug.cpp"
@@ -21,28 +24,10 @@ typedef long double ld;
 #define INF 1000000000000000000
 #define EPS 0.000000001
 #define PI 3.141592653589793238462
-#define newline "\n"
+#define newl "\n"
 #define set_bits __builtin_popcountll
-
-struct mint {
-  ll x;
-  mint():x(0){}
-  mint(ll x):x((x%MOD+MOD)%MOD){}
-  // mint(ll x):x(x){}
-  mint& fix() { x = (x%MOD+MOD)%MOD; return *this;}
-  mint operator-() const { return mint(0) - *this;}
-  mint& operator+=(const mint& a){ if((x+=a.x)>=MOD) x-=MOD; return *this;}
-  mint& operator-=(const mint& a){ if((x+=MOD-a.x)>=MOD) x-=MOD; return *this;}
-  mint& operator*=(const mint& a){ (x*=a.x)%=MOD; return *this;}
-  mint operator+(const mint& a)const{ return mint(*this) += a;}
-  mint operator-(const mint& a)const{ return mint(*this) -= a;}
-  mint operator*(const mint& a)const{ return mint(*this) *= a;}
-  bool operator<(const mint& a)const{ return x < a.x;}
-  bool operator==(const mint& a)const{ return x == a.x;}
-};
-istream& operator>>(istream&i,mint&a){i>>a.x;return i;}
-ostream& operator<<(ostream&o,const mint&a){o<<a.x;return o;}
-
+#define ordered_set tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>
+#define print(x) do { [](const auto& v) { for (size_t i = 0; i < v.size(); ++i) cout << v[i] << " \n"[i + 1 == v.size()]; }(x); } while (0)
 
 void solve(int tc) 
 {
@@ -57,7 +42,7 @@ int main()
     cin >> tc;
     for (int i = 1; i <= tc; ++i)
     {
-        solve(tc);
+        solve(i);
     }
     return 0;
 }
